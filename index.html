@@ -1,152 +1,63 @@
 <!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" lang="en">
-
-<head>
-
-	<meta charset="utf-8" />
-
-	<!-- Head content such as meta tags and encoding options, etc -->
-	
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="robots" content="index, follow" />
-		<link rel="apple-touch-icon" sizes="167x167" href="https://sergioesanchez.com/resources/medium.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="https://sergioesanchez.com/resources/Sergio%20Crest.png" />
-<link rel="apple-touch-icon" sizes="152x152" href="https://sergioesanchez.com/resources/small.png" />
-<link rel="mask-icon" href="https://sergioesanchez.com/resources/Sergio%20Crest.png" color="rgba(255,255,255,1.00)" /><link rel="icon" type="image/png" href="https://sergioesanchez.com/resources/favicon_medium.png" sizes="32x32" />
-<link rel="icon" type="image/png" href="https://sergioesanchez.com/resources/favicon_small.png" sizes="16x16" />
-<link rel="icon" type="image/png" href="https://sergioesanchez.com/resources/favicon_large.png" sizes="64x64" />
-
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="Sergio E. Sanchez">
-	<meta name="twitter:image" content="http://sergioesanchez.com/resources/Banner.png">
-	<meta name="twitter:url" content="http://sergioesanchez.com/index.html">
-	<meta property="og:type" content="website">
-	<meta property="og:site_name" content="Sergio E. Sanchez">
-	<meta property="og:title" content="Sergio E. Sanchez">
-	<meta property="og:image" content="http://sergioesanchez.com/resources/Banner.png">
-	<meta property="og:url" content="http://sergioesanchez.com/index.html">
-
-	<!-- User defined head content -->
-	
-
-	<!-- Meta tags -->
-	<!-- These in particular setup the viewport for mobile devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
-  <!-- Browser title -->
-	<title>Sergio E. Sanchez</title>
-
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" type="text/css" media="all" href="rw_common/themes/Voyager/consolidated.css?rwcache=767226017" />
-		
-
-  <!-- Main Theme Stylesheet -->
-	
-
-	<!-- RapidWeaver Color Picker Stylesheet -->
-	
-
-  <!-- Theme specific media queries -->
-	<!-- <link rel="stylesheet" href="%pathto(css/media_queries.css)%" /> -->
-
-	<!-- User defined styles -->
-	
-
-	<!-- Plugin injected code -->
-			<link rel='stylesheet' type='text/css' media='all' href='rw_common/plugins/stacks/stacks.css?rwcache=767226017' />
-		<link rel='stylesheet' type='text/css' media='all' href='files/stacks_page_page0.css?rwcache=767226017' />
-        
-        
-        
-        
-		
-        <meta name="formatter" content="Stacks v5.3.0 (6353)" >
-		
-
-
-</head>
-
-<body>
-
-
-	<!-- Navigation in Overlay -->
-	<div class="navigation_overlay">
-		<div class="navigation_inner">
-
-			<div id="navigation_close_button"><i class="fa fa-close fa-2x"></i></div>
-
-			<div class="navigation_alignment">
-				<div class="container">
-							<div class="navigation_overlay_site_logo"><img src="rw_common/images/Sergio Crest.png" width="1024" height="1024" alt=""/></div>
-							<h1 class="navigation_overlay_site_title"></h1>
-							<div id="social_badges"></div>
-							<!-- <h2 class="navigation_overlay_site_slogan"></h2> -->
-							<div id="main_navigation">
-								
-							</div>
-				</div> <!-- container -->
-			</div> <!-- main_navigation -->
-		</div> <!-- navigation inner -->
-	</div> <!-- navigation_overlay -->
-
-	<div id="scroll_up_destination"></div>
-
-	<div class="blur_wrapper">
-
-		<!-- Path Theme -->
-
-		<!-- Banner, Banner Overlay and Banner Content -->
-		<div id="banner">
-			<!-- Branding // Site Title, Logo and Navigation -->
-			<div id="sticky_container">
-				<div class="navigation_bar container">
-					<div class="site_logo"><img src="rw_common/images/Sergio Crest.png" width="1024" height="1024" alt=""/></div> <h1 class="site_title"></h1>
-					<div id="navigation_toggle"><i class="fa fa-bars"></i></div>
-				</div>
-			</div>
-
-			<div id="inner_banner">
-				<!-- Site Slogan -->
-				<div id="banner_content">
-					<h2 id="slogan"></h2>
-				</div>
-			</div>
-
-			<!-- Breadcrumb Trail -->
-			<div class="banner_breadcrumb">
-				<div class="container width_adjustment">
-					
-				</div>
-			</div>
-
-		</div>
-
-		<div id="content_container" class="container width_adjustment">
-			<div class="row">
-
-			  <div id="content">
-					
-<div id='stacks_out_1' class='stacks_top'><div id='stacks_in_1' class=''><div id='stacks_out_2' class='stacks_out'><div id='stacks_in_2' class='stacks_in html_stack'><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sergio E. Sanchez | Academic CV</title>
   <style>
-    body {
+    /* General Reset */
+    * {
       margin: 0;
-      font-family: Georgia, serif;
-      background-color: #0a0a0a;
-      color: #87cefa;
-      padding: 2rem;
-      font-size: 1.4rem;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      font-family: Georgia, serif;
+      background: url('resources/Sergio_Crest.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #87cefa;
+      min-height: 100vh;
+      padding: 4rem 2rem 2rem 2rem;
+      position: relative;
+    }
+
+    /* Overlay for content readability */
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85); /* Darker, less translucent */
+      padding: 3rem;
+      border-radius: 20px;
+      max-width: 1000px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Crest styling */
+    .crest {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 120px;
+      height: auto;
+      z-index: 10;
+    }
+
+    .crest img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .crest img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Typography */
     h1 {
       font-size: 4.5rem;
       text-align: center;
       color: gold;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
     }
 
     h2 {
@@ -154,13 +65,7 @@
       color: gold;
       border-bottom: 2px solid gold;
       margin-top: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      font-size: 24rem;
-      margin: 1rem 0 0.5rem 0;
-      color: #87cefa;
+      margin-bottom: 1.5rem;
     }
 
     p, li, a {
@@ -172,153 +77,130 @@
     ul {
       list-style-type: disc;
       margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      text-decoration: underline;
+      color: #87cefa;
+    }
+
+    a:hover {
+      color: gold;
     }
   </style>
 </head>
+
 <body>
-  <h1>Sergio E. Sanchez</h1>
 
-  <h2>Education</h2>
-  <ul>
-    <li>Ph.D., Security Studies, Kansas State University (Expected 2027)</li>
-    <li>M.A., Defense and Strategic Studies, Naval War College (Expected 2025)</li>
-    <li>M.S., Strategic Intelligence (Counterintelligence), National Intelligence University</li>
-    <li>M.A., Political Science (International Relations), CSU-Chico – With Distinction</li>
-    <li>B.A., Political Science, University of Maryland University College – Cum Laude</li>
-    <li>A.A.S., Intelligence Operations, Cochise College</li>
-    <li>A.A.S., Communications Applications Technology, Community College of the Air Force</li>
-  </ul>
+  <!-- Crest -->
+  <div class="crest">
+    <img src="resources/Sergio_Crest.png" alt="Sergio Crest">
+  </div>
 
-  <h2>Teaching Experience</h2>
-  <ul>
-    <li><strong>CSU-Chico:</strong>
-      <ul>
-        <li>POLS 404 – Interest Groups</li>
-        <li>POLS 341 – International Relations</li>
-        <li>POLS 331 – Introduction to Political Inquiry</li>
-        <li>POLS 155 – Introduction to American Government</li>
-        <li>POLS 631 – Seminar in Research Methods (TA)</li>
-        <li>POLS 421 – Methods of Political Inquiry (TA)</li>
-      </ul>
-    </li>
-    <li><strong>Butte College:</strong>
-      <ul>
-        <li>POS 18 – International Relations</li>
-        <li>POS 2 – U.S. Government</li>
-      </ul>
-    </li>
-  </ul>
+  <!-- Content Overlay -->
+  <div class="overlay">
+    <h1>Sergio E. Sanchez</h1>
 
-  <h2>Professional Experience</h2>
-  <ul>
-    <li>Intelligence Officer, Department of Defense
-      <ul>
-        <li>Program Director</li>
-        <li>Strategist</li>
-      </ul>
-    </li>
-    <li>Deputy Chief, HUMINT Operations, U.S. Army</li>
-    <li>Environmental Project Manager, Caltrans</li>
-    <li>Regulatory Investigator, CA Department of Health Care Services</li>
-    <li>HUMINT Officer & Strategic Debriefer, Defense Intelligence Agency</li>
-    <li>Information Operations/Cyber Analyst, National Security Agency</li>
-    <li>Intelligence Specialist, United States Air Force</li>
-  </ul>
+    <h2>Education</h2>
+    <ul>
+      <li>Ph.D., Security Studies, Kansas State University (Expected 2027)</li>
+      <li>M.A., Defense and Strategic Studies, Naval War College (Expected 2025)</li>
+      <li>M.S., Strategic Intelligence (Counterintelligence), National Intelligence University</li>
+      <li>M.A., Political Science (International Relations), CSU-Chico – With Distinction</li>
+      <li>B.A., Political Science, University of Maryland University College – Cum Laude</li>
+      <li>A.A.S., Intelligence Operations, Cochise College</li>
+      <li>A.A.S., Communications Applications Technology, Community College of the Air Force</li>
+    </ul>
 
-  <h2>Professional Development</h2>
-  <ul>
-    <li>Joint Foreign Material Program Officer Course, DIA</li>
-    <li>Executive Leadership Certificate, Cornell University</li>
-    <li>HUMINT Operations & Advanced Source Operations, DIA</li>
-    <li>Digital Network Analysis, NSA</li>
-    <li>Army Management, Fiscal Law, Risk Management, and more</li>
-  </ul>
+    <h2>Teaching Experience</h2>
+    <ul>
+      <li><strong>CSU-Chico:</strong>
+        <ul>
+          <li>POLS 404 – Interest Groups</li>
+          <li>POLS 341 – International Relations</li>
+          <li>POLS 331 – Introduction to Political Inquiry</li>
+          <li>POLS 155 – Introduction to American Government</li>
+          <li>POLS 631 – Seminar in Research Methods (TA)</li>
+          <li>POLS 421 – Methods of Political Inquiry (TA)</li>
+        </ul>
+      </li>
+      <li><strong>Butte College:</strong>
+        <ul>
+          <li>POS 18 – International Relations</li>
+          <li>POS 2 – U.S. Government</li>
+        </ul>
+      </li>
+    </ul>
 
-  <h2>Publications</h2>
-  <ul>
-    <li><a href="https://doi.org/10.13140/RG.2.2.23516.16002" target="_blank">“Ubiquitous Technical Surveillance: Counterintelligence Bliss, or Nightmare?”</a> – Thesis, NIU (2020)</li>
-    <li><a href="https://doi.org/10.1080/08850607.2015.992753" target="_blank">“Spider Web: Al-Qaeda’s Link to the Intelligence Agencies of the Major Powers”</a> – IJIC (2015)</li>
-  </ul>
+    <h2>Professional Experience</h2>
+    <ul>
+      <li>Intelligence Officer, Department of Defense
+        <ul>
+          <li>Program Director</li>
+          <li>Strategist</li>
+        </ul>
+      </li>
+      <li>Deputy Chief, HUMINT Operations, U.S. Army</li>
+      <li>Environmental Project Manager, Caltrans</li>
+      <li>Regulatory Investigator, CA Department of Health Care Services</li>
+      <li>HUMINT Officer & Strategic Debriefer, Defense Intelligence Agency</li>
+      <li>Information Operations/Cyber Analyst, National Security Agency</li>
+      <li>Intelligence Specialist, United States Air Force</li>
+    </ul>
 
-  <h2>Presentations</h2>
-  <ul>
-    <li>“Ubiquitous Technical Surveillance” – Emerging and Disruptive Technologies Conference, NSA (2021)</li>
-    <li>“The Internet and the Radicalization of Islamic Women” – SOVEREIGN CHALLENGE, D.C. (2014); WPSA, Seattle (2014)</li>
-  </ul>
+    <h2>Professional Development</h2>
+    <ul>
+      <li>Joint Foreign Material Program Officer Course, DIA</li>
+      <li>Executive Leadership Certificate, Cornell University</li>
+      <li>HUMINT Operations & Advanced Source Operations, DIA</li>
+      <li>Digital Network Analysis, NSA</li>
+      <li>Army Management, Fiscal Law, Risk Management, and more</li>
+    </ul>
 
-  <h2>Research Interests</h2>
-  <ul>
-    <li>International Relations</li>
-    <li>Security Studies</li>
-    <li>Terrorism</li>
-    <li>Intelligence Operations</li>
-    <li>Human Intelligence & Counterintelligence</li>
-    <li>Latin America</li>
-  </ul>
+    <h2>Publications</h2>
+    <ul>
+      <li><a href="https://doi.org/10.13140/RG.2.2.23516.16002" target="_blank">“Ubiquitous Technical Surveillance: Counterintelligence Bliss, or Nightmare?”</a> – Thesis, NIU (2020)</li>
+      <li><a href="https://doi.org/10.1080/08850607.2015.992753" target="_blank">“Spider Web: Al-Qaeda’s Link to the Intelligence Agencies of the Major Powers”</a> – IJIC (2015)</li>
+    </ul>
 
-  <h2>Affiliations</h2>
-  <ul>
-    <li>International Studies Association</li>
-  </ul>
+    <h2>Presentations</h2>
+    <ul>
+      <li>“Ubiquitous Technical Surveillance” – Emerging and Disruptive Technologies Conference, NSA (2021)</li>
+      <li>“The Internet and the Radicalization of Islamic Women” – SOVEREIGN CHALLENGE, D.C. (2014); WPSA, Seattle (2014)</li>
+    </ul>
 
-  <h2>Awards and Honors</h2>
-  <ul>
-    <li>Minority Fellow, APSA Minority Fellowship Program </li>
-    <li>Civilian Service Commendation Medal (2023)</li>
-    <li>Civilian Service Achievement Medal (2023)</li>
-    <li>Secretary of Defense GWOT Medal (2011)</li>
-    <li>Defense Meritorious Service Medal, Joint Commendation & Achievement Awards, USAF Commendation and Achievement Medals, and more</li>
-  </ul>
+    <h2>Research Interests</h2>
+    <ul>
+      <li>International Relations</li>
+      <li>Security Studies</li>
+      <li>Terrorism</li>
+      <li>Intelligence Operations</li>
+      <li>Human Intelligence & Counterintelligence</li>
+      <li>Latin America</li>
+    </ul>
 
-  <h2>Languages</h2>
-  <ul>
-    <li>Spanish: DLPT – 2+R / 3L / 2+S (2023)</li>
-    <li>German: DLPT – 1R / 1L (2010)</li>
-  </ul>
+    <h2>Affiliations</h2>
+    <ul>
+      <li>International Studies Association</li>
+    </ul>
 
-</body>
-</html>
-</div></div></div></div>
+    <h2>Awards and Honors</h2>
+    <ul>
+      <li>Minority Fellow, APSA Minority Fellowship Program</li>
+      <li>Civilian Service Commendation Medal (2023)</li>
+      <li>Civilian Service Achievement Medal (2023)</li>
+      <li>Secretary of Defense GWOT Medal (2011)</li>
+      <li>Defense Meritorious Service Medal, Joint Commendation & Achievement Awards, USAF Commendation and Achievement Medals, and more</li>
+    </ul>
 
-					<div class="clearer"></div>
-				</div>
+    <h2>Languages</h2>
+    <ul>
+      <li>Spanish: DLPT – 2+R / 3L / 2+S (2023)</li>
+      <li>German: DLPT – 1R / 1L (2010)</li>
+    </ul>
 
-			  <aside id="sidebar">
-					<h3 id="sidebar_title"></h3>
-					
-
-					<div id="archives">
-						
-					</div>
-				</aside>
-
-			</div>
-		</div>
-
-		<footer>
-			<div class="rapidweaver_footer container width_adjustment">
-				&copy; 2025 Sergio E. Sanchez <a href="#" class="A36F74E0-4D40-411E-A9BB-C7129E647439">Contact Me</a><script type="text/javascript">(function(){ var _rwObsfuscatedHref0 = "mai";var _rwObsfuscatedHref1 = "lto";var _rwObsfuscatedHref2 = ":se";var _rwObsfuscatedHref3 = "rgi";var _rwObsfuscatedHref4 = "o@s";var _rwObsfuscatedHref5 = "erg";var _rwObsfuscatedHref6 = "ioe";var _rwObsfuscatedHref7 = "san";var _rwObsfuscatedHref8 = "che";var _rwObsfuscatedHref9 = "z.c";var _rwObsfuscatedHref10 = "om";var _rwObsfuscatedHref = _rwObsfuscatedHref0+_rwObsfuscatedHref1+_rwObsfuscatedHref2+_rwObsfuscatedHref3+_rwObsfuscatedHref4+_rwObsfuscatedHref5+_rwObsfuscatedHref6+_rwObsfuscatedHref7+_rwObsfuscatedHref8+_rwObsfuscatedHref9+_rwObsfuscatedHref10; Array.from(document.getElementsByClassName("A36F74E0-4D40-411E-A9BB-C7129E647439")).forEach(function(x){x.href = _rwObsfuscatedHref});})()</script>
-			</div>
-		</footer>
-
-	</div>
-
-	<!-- jQuery 1.8 is included in the theme internally -->
-  <script src="rw_common/themes/Voyager/js/jquery.min.js?rwcache=767226017"></script>
-
-	<!-- Base RapidWeaver javascript -->
-	<script async type="text/javascript" src="rw_common/themes/Voyager/javascript.js?rwcache=767226017"></script>
-
-  <!-- Elixir theme specific javascript, along with jQuery Easing and a few other elements -->
-  <script src="rw_common/themes/Voyager/js/elixir.js?rwcache=767226017"></script>
-
-	<!-- Style variations -->
-	<script src="rw_common/themes/Voyager/js/sidebar/sidebar_hidden.js?rwcache=767226017"></script>
-		
-
-	<!-- User defined javascript -->
-	
+  </div>
 
 </body>
-
 </html>
