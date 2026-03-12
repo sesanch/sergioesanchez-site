@@ -3,204 +3,792 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sergio E. Sanchez | Academic CV</title>
+  <title>Sergio E. Sanchez | Security Studies Scholar & Intelligence Professional</title>
+  <meta name="description" content="PhD candidate in Security Studies at Kansas State University. Intelligence Officer, DoD. Research on intelligence reform, democratic accountability, and ubiquitous technical surveillance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@300;400;600&family=Merriweather:ital@1&display=swap" rel="stylesheet">
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* ── Reset & Variables ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-primary:    #0d1117;
+      --bg-secondary:  #161b22;
+      --bg-card:       #1c2333;
+      --accent-blue:   #1e90ff;
+      --accent-gold:   #c9a84c;
+      --accent-gold-bright: #f0c050;
+      --text-primary:  #e8eaf0;
+      --text-secondary:#8b949e;
+      --border:        #30363d;
+      --serif:         'Playfair Display', Georgia, serif;
+      --sans:          'Source Sans 3', Arial, sans-serif;
+      --italic:        'Merriweather', Georgia, serif;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Georgia, serif;
-      background: url('resources/Sergio_Crest.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #87cefa;
-      min-height: 100vh;
-      padding: 4rem 2rem 2rem 2rem;
-      position: relative;
+      font-family: var(--sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    /* Overlay for content readability */
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.85); /* Darker, less translucent */
-      padding: 3rem;
-      border-radius: 20px;
-      max-width: 1000px;
-      margin: auto;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-    }
+    /* ── Typography ── */
+    h1 { font-family: var(--serif); font-size: clamp(2.6rem, 6vw, 4.2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; }
+    h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; color: var(--text-primary); }
+    h3 { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-gold); }
+    p  { color: var(--text-secondary); line-height: 1.8; }
+    a  { color: var(--accent-blue); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent-gold-bright); }
 
-    /* Crest styling */
-    .crest {
+    /* ── Layout ── */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+    section { padding: 5rem 0; }
+    section:nth-child(even) { background: var(--bg-secondary); }
+
+    /* ── Nav ── */
+    nav {
       position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 120px;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(13,17,23,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+    .nav-links a:hover { color: var(--accent-gold); }
+
+    /* ── Hero ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(30,144,255,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 70%, rgba(201,168,76,0.05) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-photo-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .hero-headshot {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--accent-gold);
+      box-shadow: 0 0 30px rgba(201,168,76,0.2), 0 0 60px rgba(30,144,255,0.1);
+    }
+
+    .hero-crest-small {
+      width: 64px;
       height: auto;
-      z-index: 10;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 8px rgba(201,168,76,0.3));
     }
 
-    .crest img {
-      width: 100%;
-      height: auto;
-      transition: transform 0.3s ease;
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1rem;
     }
 
-    .crest img:hover {
-      transform: scale(1.05);
+    .hero-name {
+      margin-bottom: 1.2rem;
     }
 
-    /* Typography */
-    h1 {
-      font-size: 4.5rem;
+    .hero-title {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.6rem;
+      max-width: 540px;
+    }
+
+    .hero-tagline {
+      font-family: var(--italic);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      padding-left: 1rem;
+      border-left: 3px solid var(--accent-blue);
+      margin-bottom: 2.4rem;
+      max-width: 520px;
+    }
+
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.65rem 1.4rem;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #3da5ff; color: #fff; }
+
+    .btn-secondary {
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      background: transparent;
+    }
+    .btn-secondary:hover { background: var(--accent-gold); color: var(--bg-primary); }
+
+    .btn-ghost {
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      background: transparent;
+    }
+    .btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+    /* ── Section Header ── */
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-gold);
+      display: inline-block;
+    }
+
+    .section-header p {
+      margin-top: 1rem;
+      max-width: 640px;
+    }
+
+    /* ── About ── */
+    .about-body p {
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .research-statement {
+      font-family: var(--italic);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      padding: 1.2rem 1.6rem;
+      border-left: 4px solid var(--accent-blue);
+      background: rgba(30,144,255,0.05);
+      border-radius: 0 6px 6px 0;
+      margin: 2rem 0;
+      line-height: 1.7;
+    }
+
+    .nexus-link-block {
+      margin-top: 2rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .nexus-link-block p { margin: 0; font-size: 0.95rem; }
+
+    /* ── Projects ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-blue);
+      box-shadow: 0 4px 20px rgba(30,144,255,0.1);
+    }
+
+    .project-card h3 { margin-bottom: 0.6rem; }
+
+    .project-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .project-card p { font-size: 0.95rem; margin-bottom: 1rem; }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+    }
+
+    .badge-progress { background: rgba(30,144,255,0.15); color: var(--accent-blue); }
+    .badge-review   { background: rgba(201,168,76,0.15);  color: var(--accent-gold); }
+    .badge-active   { background: rgba(56,211,100,0.15);  color: #56d364; }
+
+    /* ── Publications ── */
+    .pub-list { list-style: none; }
+    .pub-item {
+      padding: 1.6rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.4rem;
+    }
+
+    .pub-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .pub-desc { font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .pub-link { font-size: 0.875rem; font-weight: 600; }
+
+    .pres-list { list-style: none; margin-top: 2rem; }
+    .pres-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .pres-item:last-child { border-bottom: none; }
+
+    .pres-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--accent-blue);
+      white-space: nowrap;
+      padding-top: 0.15rem;
+      min-width: 2.5rem;
+    }
+
+    .pres-text { font-size: 0.95rem; color: var(--text-secondary); }
+    .pres-text strong { color: var(--text-primary); }
+
+    /* ── Credentials ── */
+    .cred-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .cred-section h3 { margin-bottom: 1rem; }
+
+    .cred-list { list-style: none; }
+    .cred-item {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(48,54,61,0.5);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .cred-item:last-child { border-bottom: none; }
+    .cred-item strong { color: var(--text-primary); display: block; }
+    .cred-item em { color: var(--accent-gold); font-style: normal; font-size: 0.85rem; }
+
+    .cv-download-block {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cv-download-block p { font-size: 0.95rem; margin: 0; }
+
+    /* ── Connect ── */
+    .connect-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .connect-statement {
+      font-family: var(--italic);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+    }
+
+    .connect-body p { font-size: 0.95rem; margin-bottom: 1rem; }
+
+    .link-list { list-style: none; }
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+    .link-item:last-child { border-bottom: none; }
+
+    .link-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 4px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      color: var(--accent-blue);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
       text-align: center;
-      color: gold;
-      margin-bottom: 2rem;
     }
 
-    h2 {
-      font-size: 2.4rem;
-      color: gold;
-      border-bottom: 2px solid gold;
-      margin-top: 3rem;
-      margin-bottom: 1.5rem;
+    footer p { font-size: 0.875rem; color: var(--text-secondary); }
+    footer a { color: var(--text-secondary); }
+    footer a:hover { color: var(--accent-gold); }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo-col { order: -1; }
+      .hero-headshot { width: 160px; height: 160px; }
+      .connect-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      nav .nav-links { display: none; }
     }
 
-    p, li, a {
-      font-size: 1.4rem;
-      line-height: 1.8;
-      color: #87cefa;
-    }
-
-    ul {
-      list-style-type: disc;
-      margin-left: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    a {
-      text-decoration: underline;
-      color: #87cefa;
-    }
-
-    a:hover {
-      color: gold;
+    @media (max-width: 500px) {
+      section { padding: 3.5rem 0; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Crest -->
-  <div class="crest">
-    <img src="resources/Sergio_Crest.png" alt="Sergio Crest">
-  </div>
-
-  <!-- Content Overlay -->
-  <div class="overlay">
-    <h1>Sergio E. Sanchez</h1>
-
-    <h2>Education</h2>
-    <ul>
-      <li>Ph.D., Security Studies, Kansas State University (Expected 2027)</li>
-      <li>M.A., Defense and Strategic Studies, Naval War College (Expected 2025)</li>
-      <li>M.S., Strategic Intelligence (Counterintelligence), National Intelligence University</li>
-      <li>M.A., Political Science (International Relations), CSU-Chico – With Distinction</li>
-      <li>B.A., Political Science, University of Maryland University College – Cum Laude</li>
-      <li>A.A.S., Intelligence Operations, Cochise College</li>
-      <li>A.A.S., Communications Applications Technology, Community College of the Air Force</li>
+  <!-- ── Navigation ── -->
+  <nav>
+    <span class="nav-name">Sergio E. Sanchez</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#credentials">CV</a></li>
+      <li><a href="#connect">Connect</a></li>
     </ul>
+  </nav>
 
-    <h2>Teaching Experience</h2>
-    <ul>
-      <li><strong>CSU-Chico:</strong>
-        <ul>
-          <li>POLS 404 – Interest Groups</li>
-          <li>POLS 341 – International Relations</li>
-          <li>POLS 331 – Introduction to Political Inquiry</li>
-          <li>POLS 155 – Introduction to American Government</li>
-          <li>POLS 631 – Seminar in Research Methods (TA)</li>
-          <li>POLS 421 – Methods of Political Inquiry (TA)</li>
-        </ul>
-      </li>
-      <li><strong>Butte College:</strong>
-        <ul>
-          <li>POS 18 – International Relations</li>
-          <li>POS 2 – U.S. Government</li>
-        </ul>
-      </li>
-    </ul>
+  <!-- ── Hero ── -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div>
+          <p class="hero-eyebrow">Security Studies Scholar &amp; Intelligence Professional</p>
+          <h1 class="hero-name">Sergio E.<br>Sanchez</h1>
+          <p class="hero-title">
+            PhD Candidate, Kansas State University &bull; Intelligence Officer, Department of Defense &bull; Founder, The Security Nexus, LLC
+          </p>
+          <p class="hero-tagline">
+            Research at the intersection of intelligence accountability, surveillance governance, and democratic resilience.
+          </p>
+          <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">Research</a>
+            <a href="#publications" class="btn btn-secondary">Publications</a>
+            <a href="#connect" class="btn btn-ghost">Collaborate</a>
+          </div>
+        </div>
+        <div class="hero-photo-col">
+          <img src="resources/headshot.png" alt="Sergio E. Sanchez" class="hero-headshot" />
+          <img src="resources/Sergio_Crest.png" alt="Sergio E. Sanchez Crest" class="hero-crest-small" />
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Professional Experience</h2>
-    <ul>
-      <li>Intelligence Officer, Department of Defense
-        <ul>
-          <li>Program Director</li>
-          <li>Strategist</li>
-        </ul>
-      </li>
-      <li>Deputy Chief, HUMINT Operations, U.S. Army</li>
-      <li>Environmental Project Manager, Caltrans</li>
-      <li>Regulatory Investigator, CA Department of Health Care Services</li>
-      <li>HUMINT Officer & Strategic Debriefer, Defense Intelligence Agency</li>
-      <li>Information Operations/Cyber Analyst, National Security Agency</li>
-      <li>Intelligence Specialist, United States Air Force</li>
-    </ul>
+  <!-- ── About ── -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h3>About</h3>
+        <h2>Practitioner. Scholar. Analyst.</h2>
+      </div>
 
-    <h2>Professional Development</h2>
-    <ul>
-      <li>Joint Foreign Material Program Officer Course, DIA</li>
-      <li>Executive Leadership Certificate, Cornell University</li>
-      <li>HUMINT Operations & Advanced Source Operations, DIA</li>
-      <li>Digital Network Analysis, NSA</li>
-      <li>Army Management, Fiscal Law, Risk Management, and more</li>
-    </ul>
+      <div class="about-body">
+        <p>
+          I am a PhD candidate in Security Studies at Kansas State University and an active Intelligence Officer within the Department of Defense, where I currently serve as a Program Director and Strategist. My career spans more than two decades of U.S. government service across the Defense Intelligence Agency, the National Security Agency, and the U.S. Army, with assignments in HUMINT operations, counterintelligence, and cyber and information operations analysis.
+        </p>
 
-    <h2>Publications</h2>
-    <ul>
-      <li><a href="https://doi.org/10.13140/RG.2.2.23516.16002" target="_blank">“Ubiquitous Technical Surveillance: Counterintelligence Bliss, or Nightmare?”</a> – Thesis, NIU (2020)</li>
-      <li><a href="https://doi.org/10.1080/08850607.2015.992753" target="_blank">“Spider Web: Al-Qaeda’s Link to the Intelligence Agencies of the Major Powers”</a> – IJIC (2015)</li>
-    </ul>
+        <div class="research-statement">
+          My dissertation, <em>The Inheritance Problem: Intelligence and Security Services in Post-Authoritarian Democracies</em>, develops a comparative theory explaining why some post-authoritarian intelligence services become genuinely accountable while others persist as instruments of executive control — and why well-intentioned reform strategies so frequently fail.
+        </div>
 
-    <h2>Presentations</h2>
-    <ul>
-      <li>“Ubiquitous Technical Surveillance” – Emerging and Disruptive Technologies Conference, NSA (2021)</li>
-      <li>“The Internet and the Radicalization of Islamic Women” – SOVEREIGN CHALLENGE, D.C. (2014); WPSA, Seattle (2014)</li>
-    </ul>
+        <p>
+          The research draws on case studies from Latin America and Southern Europe, combining archival analysis with institutional theory. It speaks directly to ongoing debates in comparative politics, security sector reform, and the governance of intelligence in emerging and consolidating democracies.
+        </p>
+        <p>
+          Alongside the dissertation, my work on ubiquitous technical surveillance (UTS) examines the legal, organizational, and counterintelligence implications of mass collection infrastructure — a manuscript currently under review at <em>Intelligence and National Security</em>. Both projects reflect a consistent preoccupation: what happens to democratic institutions when the most powerful tools of social control are inherited, rather than built, by governments that claim to have changed?
+        </p>
 
-    <h2>Research Interests</h2>
-    <ul>
-      <li>International Relations</li>
-      <li>Security Studies</li>
-      <li>Terrorism</li>
-      <li>Intelligence Operations</li>
-      <li>Human Intelligence & Counterintelligence</li>
-      <li>Latin America</li>
-    </ul>
+        <div class="nexus-link-block">
+          <div>
+            <p><strong>The Security Nexus, LLC</strong> — my Maryland-based national security consultancy, blog, and podcast.</p>
+            <p style="margin-top:0.4rem;">
+              <a href="https://www.thesecuritynexus.net" target="_blank" rel="noopener">thesecuritynexus.net</a>
+              &nbsp;&bull;&nbsp;
+              <a href="https://www.thesecuritynexus.net/blog.html" target="_blank" rel="noopener">Blog</a>
+              &nbsp;&bull;&nbsp;
+              <a href="https://rss.com/podcasts/the-security-nexus-deep-dive" target="_blank" rel="noopener">Podcast</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Affiliations</h2>
-    <ul>
-      <li>International Studies Association</li>
-    </ul>
+  <!-- ── Projects ── -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h3>Current Research</h3>
+        <h2>Active Projects</h2>
+      </div>
 
-    <h2>Awards and Honors</h2>
-    <ul>
-      <li>Minority Fellow, APSA Minority Fellowship Program</li>
-      <li>Civilian Service Commendation Medal (2023)</li>
-      <li>Civilian Service Achievement Medal (2023)</li>
-      <li>Secretary of Defense GWOT Medal (2011)</li>
-      <li>Defense Meritorious Service Medal, Joint Commendation & Achievement Awards, USAF Commendation and Achievement Medals, and more</li>
-    </ul>
+      <div class="projects-grid">
 
-    <h2>Languages</h2>
-    <ul>
-      <li>Spanish: DLPT – 2+R / 3L / 2+S (2023)</li>
-      <li>German: DLPT – 1R / 1L (2010)</li>
-    </ul>
+        <div class="project-card">
+          <h3>Dissertation</h3>
+          <p class="project-title">The Inheritance Problem: Intelligence and Security Services in Post-Authoritarian Democracies</p>
+          <p>
+            A comparative study of intelligence reform outcomes in Chile, Argentina, Peru, Ecuador, and Spain. The central argument: democratic accountability depends on whether a reform strategy targets the specific formation-era mechanisms generating institutional resistance — a problem of strategy-mechanism correspondence, not political will alone.
+          </p>
+          <span class="badge badge-progress">In Progress &mdash; KSU / Expected 2027</span>
+        </div>
 
-  </div>
+        <div class="project-card">
+          <h3>Article Manuscript</h3>
+          <p class="project-title">Ubiquitous Technical Surveillance: Governance, Counterintelligence, and Democratic Accountability</p>
+          <p>
+            An analysis of mass surveillance infrastructure as a governance problem — examining the legal frameworks, organizational cultures, and counterintelligence implications of ubiquitous technical collection in liberal democracies.
+          </p>
+          <span class="badge badge-review">Under Review &mdash; Intelligence and National Security</span>
+        </div>
+
+        <div class="project-card">
+          <h3>Consultancy &amp; Public Writing</h3>
+          <p class="project-title">The Security Nexus, LLC</p>
+          <p>
+            Strategic consulting, intelligence analysis, and public scholarship through blogging and podcasting. Topics include cyber escalation, hybrid warfare, intelligence community analysis, and AI in national security.
+          </p>
+          <a href="https://www.thesecuritynexus.net" target="_blank" rel="noopener" style="font-size:0.9rem; font-weight:600;">
+            thesecuritynexus.net &rarr;
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Publications ── -->
+  <section id="publications">
+    <div class="container">
+      <div class="section-header">
+        <h3>Scholarship</h3>
+        <h2>Publications &amp; Presentations</h2>
+      </div>
+
+      <ul class="pub-list">
+        <li class="pub-item">
+          <p class="pub-meta">Graduate Thesis &mdash; National Intelligence University, 2020</p>
+          <p class="pub-title">"Ubiquitous Technical Surveillance: Counterintelligence Bliss, or Nightmare?"</p>
+          <p class="pub-desc">Examines the counterintelligence and governance implications of mass collection infrastructure, arguing that ubiquitous surveillance presents a paradox: capabilities designed to protect national security simultaneously generate structural vulnerabilities and democratic accountability deficits.</p>
+          <a href="https://doi.org/10.13140/RG.2.2.23516.16002" target="_blank" rel="noopener" class="pub-link">DOI: 10.13140/RG.2.2.23516.16002 &rarr;</a>
+        </li>
+
+        <li class="pub-item">
+          <p class="pub-meta">Peer-Reviewed Article &mdash; International Journal of Intelligence and CounterIntelligence, 2015</p>
+          <p class="pub-title">"Spider Web: Al-Qaeda's Link to the Intelligence Agencies of the Major Powers"</p>
+          <p class="pub-desc">Analyzes the intelligence relationships between Al-Qaeda and state intelligence services, assessing the degree to which major-power agencies had knowledge of or operational contact with the network prior to and following the September 11 attacks.</p>
+          <a href="https://doi.org/10.1080/08850607.2015.992753" target="_blank" rel="noopener" class="pub-link">DOI: 10.1080/08850607.2015.992753 &rarr;</a>
+        </li>
+      </ul>
+
+      <h3 style="margin-top: 3rem; margin-bottom: 0.5rem;">Presentations</h3>
+      <ul class="pres-list">
+        <li class="pres-item">
+          <span class="pres-year">2021</span>
+          <p class="pres-text"><strong>"Ubiquitous Technical Surveillance"</strong> &mdash; Emerging and Disruptive Technologies Conference, National Security Agency</p>
+        </li>
+        <li class="pres-item">
+          <span class="pres-year">2014</span>
+          <p class="pres-text"><strong>"The Internet and the Radicalization of Islamic Women"</strong> &mdash; SOVEREIGN CHALLENGE, Washington, D.C.; Western Political Science Association, Seattle</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Credentials ── -->
+  <section id="credentials">
+    <div class="container">
+      <div class="section-header">
+        <h3>Background</h3>
+        <h2>Credentials</h2>
+      </div>
+
+      <div class="cred-grid">
+
+        <div class="cred-section">
+          <h3>Education</h3>
+          <ul class="cred-list">
+            <li class="cred-item">
+              <strong>Ph.D., Security Studies</strong>
+              Kansas State University <em>Expected 2027</em>
+            </li>
+            <li class="cred-item">
+              <strong>M.A., Defense and Strategic Studies</strong>
+              Naval War College <em>Expected 2026</em>
+            </li>
+            <li class="cred-item">
+              <strong>M.S., Strategic Intelligence (Counterintelligence)</strong>
+              National Intelligence University
+            </li>
+            <li class="cred-item">
+              <strong>M.A., Political Science (International Relations)</strong>
+              CSU-Chico &mdash; With Distinction
+            </li>
+            <li class="cred-item">
+              <strong>B.A., Political Science</strong>
+              University of Maryland &mdash; Cum Laude
+            </li>
+          </ul>
+        </div>
+
+        <div class="cred-section">
+          <h3>Professional Service</h3>
+          <ul class="cred-list">
+            <li class="cred-item">
+              <strong>Intelligence Officer, Department of Defense</strong>
+              Program Director &amp; Strategist
+            </li>
+            <li class="cred-item">
+              <strong>Deputy Chief, HUMINT Operations</strong>
+              U.S. Army
+            </li>
+            <li class="cred-item">
+              <strong>HUMINT Officer &amp; Strategic Debriefer</strong>
+              Defense Intelligence Agency
+            </li>
+            <li class="cred-item">
+              <strong>Information Operations / Cyber Analyst</strong>
+              National Security Agency
+            </li>
+            <li class="cred-item">
+              <strong>Intelligence Specialist</strong>
+              United States Air Force
+            </li>
+          </ul>
+        </div>
+
+        <div class="cred-section">
+          <h3>Teaching</h3>
+          <ul class="cred-list">
+            <li class="cred-item">
+              <strong>CSU-Chico</strong>
+              International Relations, American Government, Interest Groups, Research Methods (TA)
+            </li>
+            <li class="cred-item">
+              <strong>Butte College</strong>
+              International Relations, U.S. Government
+            </li>
+          </ul>
+
+          <h3 style="margin-top:2rem;">Languages</h3>
+          <ul class="cred-list">
+            <li class="cred-item"><strong>Spanish</strong> DLPT 2+R / 3L / 2+S</li>
+            <li class="cred-item"><strong>German</strong> DLPT 1R / 1L</li>
+          </ul>
+        </div>
+
+        <div class="cred-section">
+          <h3>Recognition</h3>
+          <ul class="cred-list">
+            <li class="cred-item"><strong>APSA Minority Fellow</strong> American Political Science Association</li>
+            <li class="cred-item"><strong>Civilian Service Commendation Medal</strong> 2023</li>
+            <li class="cred-item"><strong>Civilian Service Achievement Medal</strong> 2023</li>
+            <li class="cred-item"><strong>Secretary of Defense GWOT Medal</strong> 2011</li>
+            <li class="cred-item"><strong>Defense Meritorious Service Medal</strong> Joint Commendation &amp; Achievement Awards; USAF Commendation and Achievement Medals</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cv-download-block">
+        <p>Full curriculum vitae available on request.</p>
+        <a href="#connect" class="btn btn-ghost">Contact for CV</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Connect ── -->
+  <section id="connect">
+    <div class="container">
+      <div class="section-header">
+        <h3>Collaboration &amp; Contact</h3>
+        <h2>Let's Work Together</h2>
+      </div>
+
+      <div class="connect-inner">
+        <div class="connect-body">
+          <p class="connect-statement">I welcome inquiries about research collaboration, co-authorship, conference panels, fellowship programs, consulting engagements, and speaking invitations.</p>
+          <p>
+            My work sits at a productive intersection: intelligence practice, comparative politics, and security governance. If you are researching post-authoritarian transitions, intelligence accountability, surveillance policy, or related topics in Latin America or Southern Europe, I am likely interested in talking.
+          </p>
+          <p>
+            I am also available for consulting on intelligence reform, HUMINT program assessment, and surveillance governance analysis for academic institutions, policy organizations, and government partners.
+          </p>
+          <a href="mailto:sesanch@ksu.edu" class="btn btn-primary" style="margin-top:0.5rem;">Send a Message</a>
+        </div>
+
+        <div>
+          <ul class="link-list">
+            <li class="link-item">
+              <span class="link-icon">&#127760;</span>
+              <div>
+                <div style="font-weight:600; color: var(--text-primary);">The Security Nexus</div>
+                <a href="https://www.thesecuritynexus.net" target="_blank" rel="noopener" style="font-size:0.875rem;">thesecuritynexus.net</a>
+              </div>
+            </li>
+            <li class="link-item">
+              <span class="link-icon">&#9997;</span>
+              <div>
+                <div style="font-weight:600; color: var(--text-primary);">Blog</div>
+                <a href="https://www.thesecuritynexus.net/blog.html" target="_blank" rel="noopener" style="font-size:0.875rem;">National Security Analysis</a>
+              </div>
+            </li>
+            <li class="link-item">
+              <span class="link-icon">&#127911;</span>
+              <div>
+                <div style="font-weight:600; color: var(--text-primary);">Podcast</div>
+                <a href="https://rss.com/podcasts/the-security-nexus-deep-dive" target="_blank" rel="noopener" style="font-size:0.875rem;">The Security Nexus Deep Dive</a>
+              </div>
+            </li>
+            <li class="link-item">
+              <span class="link-icon">&#128218;</span>
+              <div>
+                <div style="font-weight:600; color: var(--text-primary);">ResearchGate</div>
+                <a href="https://doi.org/10.13140/RG.2.2.23516.16002" target="_blank" rel="noopener" style="font-size:0.875rem;">UTS Thesis</a>
+              </div>
+            </li>
+            <li class="link-item">
+              <span class="link-icon">&#128203;</span>
+              <div>
+                <div style="font-weight:600; color: var(--text-primary);">IJIC Publication</div>
+                <a href="https://doi.org/10.1080/08850607.2015.992753" target="_blank" rel="noopener" style="font-size:0.875rem;">Spider Web (2015)</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Sergio E. Sanchez. All rights reserved. &nbsp;&bull;&nbsp; <a href="https://www.thesecuritynexus.net" target="_blank" rel="noopener">The Security Nexus</a></p>
+    </div>
+  </footer>
 
 </body>
 </html>
